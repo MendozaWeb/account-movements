@@ -32,7 +32,7 @@ public class MovementController {
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/list/{id}")
     public Mono<ResponseEntity<MovementResponseDto>> getMovementById(@PathVariable Long id) {
         return movementService.getMovementById(id)
                 .map(ResponseEntity::ok)
